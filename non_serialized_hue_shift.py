@@ -1,4 +1,4 @@
-def non_serialized_hue_shift(wait):
+def non_serialized_hue_shift(wait, speed):
 
     # Generate the colors
     for i in range(256):
@@ -21,7 +21,7 @@ def non_serialized_hue_shift(wait):
 
     for i in range(len(color_list)):
         for j in pixels_list:
-            k = (i+j)%len(color_list) #if we exceed the list, wrap around
+            k = (speed*(i+j))%len(color_list) #if we exceed the list, wrap around
             pixels.set_pixel(j, color_list[k])
         pixels.show()
         if wait > 0:
