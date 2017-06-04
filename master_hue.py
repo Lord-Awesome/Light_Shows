@@ -14,22 +14,30 @@ from random_light_display import random_light_display
 
 pixels.clear()
 
-# Function 1. All the LEDs light at the same time to the same color. Color iterates through spectrum.
-wait1 = 0
-speed1 = 1.75
-simultaneous_hue_shift(wait1)
+# i values determine how many times to run each function. j determines how many times to loop
 
-# Function 2. Sequential LEDs display sequential colors in the spectrum. Each LED iterates through the spectrum.
-# Increasing speed makes the iteration coarser so the effect is more noticeable.
-wait2 = 0
-speed2 = 1.75
-serialized_hue_shift(wait2, speed2)
+for j in range(1):
+    # Function 1. All the LEDs light at the same time to the same color. Color iterates through spectrum.
+    for i in range(1):
+        wait1 = 0
+        speed1 = 1.75 
+        simultaneous_hue_shift(wait1, speed1)
 
-#Function 3. LEDs are still lit sequentially so the colors appear to travel along the strand, but the colors are random.
-wait3 = 0
-speed3 = 1.75
-non_serialized_hue_shift(wait3, speed3)
+    # Function 2. Sequential LEDs display sequential colors in the spectrum. Each LED iterates through the spectrum.
+    # Increasing speed makes the iteration coarser so the effect is more noticeable.
+    for i in range(1):
+        wait2 = 0
+        speed2 = 1.75 
+        serialized_hue_shift(wait2, speed2)
 
-#The colors and placement are random, so it's just a crazy light show. Precursor to rave.py
-wait4 = 0
-random_light_display(wait4)
+    #Function 3. LEDs are still lit sequentially so the colors appear to travel along the strand, but the colors are random.
+    for i in range(1):
+        wait3 = 0
+        speed3 = 1.75
+        non_serialized_hue_shift(wait3, speed3)
+
+    #The colors and placement are random, so it's just a crazy light show. Precursor to rave.py
+    for i in range(1):
+        wait4 = 0
+        speed4 = 1.75
+        random_light_display(wait4, speed4)

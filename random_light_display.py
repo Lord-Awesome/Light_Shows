@@ -1,17 +1,17 @@
-def random_light_display(wait):
+def random_light_display(wait, speed):
 
     # Generate the colors
-    for i in range(256):
-        color = Adafruit_WS2801.RGB_to_color(0, 255, i)
+    for i in range(math.floor(256/speed)):
+        color = Adafruit_WS2801.RGB_to_color(0, 255, math.floor(i*speed))
         color_list.append(color)
-    for i in range(256):
-        color = Adafruit_WS2801.RGB_to_color(0, 255-i, 255)
+    for i in range(math.floor(256/speed)):
+        color = Adafruit_WS2801.RGB_to_color(0, 255-math.floor(i*speed), 255)
         color_list.append(color)
-    for i in range(256):
-        color = Adafruit_WS2801.RGB_to_color(i, 0, 255)
+    for i in range(math.floor(256/speed)):
+        color = Adafruit_WS2801.RGB_to_color(math.floor(i*speed), 0, 255)
         color_list.append(color)
-    for i in range(256):
-        color = Adafruit_WS2801.RGB_to_color(255, 0, 255-i)
+    for i in range(math.floor(256/speed)):
+        color = Adafruit_WS2801.RGB_to_color(255, 0, 255-math.floor(i*speed))
         color_list.append(color)
 
     pixels.clear()
